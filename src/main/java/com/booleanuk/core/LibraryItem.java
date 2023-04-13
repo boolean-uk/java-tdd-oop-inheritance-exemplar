@@ -9,6 +9,10 @@ public class LibraryItem {
         this.title = title;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
     public boolean isOnLoan() {
         return onLoan;
     }
