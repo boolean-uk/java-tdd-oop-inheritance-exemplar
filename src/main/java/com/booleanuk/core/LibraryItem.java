@@ -2,11 +2,20 @@ package com.booleanuk.core;
 
 public class LibraryItem {
     String title;
+    Author author = null;
 
     boolean onLoan = false;
 
     public LibraryItem(String title) {
         this.title = title;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public Author getAuthor() {
+        return this.author;
     }
 
     public String getTitle() {

@@ -9,7 +9,8 @@ public class LibraryTest {
     public void testAddingBook() {
         Library library = new Library();
         String title = "Java: Just in Time";
-        LibraryItem book = new Book(title);
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
+        LibraryItem book = new Book(title, bookAuthor);
         library.addToStock(book);
 
         Assertions.assertTrue((long) library.items.size() > 0);
@@ -20,7 +21,8 @@ public class LibraryTest {
     public void testAddingArticle() {
         Library library = new Library();
         String title = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(title);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(title, articleAuthor);
         library.addToStock(article);
 
         Assertions.assertTrue((long) library.items.size() > 0);
@@ -41,11 +43,13 @@ public class LibraryTest {
     @Test
     public void testCheckingOutBookWorks() {
         Library library = new Library();
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
         String bookTitle = "Java: Just in Time";
-        LibraryItem book = new Book(bookTitle);
+        LibraryItem book = new Book(bookTitle, bookAuthor);
         library.addToStock(book);
         String articleTitle = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(articleTitle);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(articleTitle, articleAuthor);
         library.addToStock(article);
         String newspaperTitle = "The Daily Java";
         LibraryItem newspaper = new Newspaper(newspaperTitle);
@@ -58,10 +62,12 @@ public class LibraryTest {
     public void testCheckingOutArticleWorks() {
         Library library = new Library();
         String bookTitle = "Java: Just in Time";
-        LibraryItem book = new Book(bookTitle);
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
+        LibraryItem book = new Book(bookTitle, bookAuthor);
         library.addToStock(book);
         String articleTitle = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(articleTitle);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(articleTitle, articleAuthor);
         library.addToStock(article);
         String newspaperTitle = "The Daily Java";
         LibraryItem newspaper = new Newspaper(newspaperTitle);
@@ -74,10 +80,12 @@ public class LibraryTest {
     public void testCheckingOutNewspaperDoesNotWork() {
         Library library = new Library();
         String bookTitle = "Java: Just in Time";
-        LibraryItem book = new Book(bookTitle);
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
+        LibraryItem book = new Book(bookTitle, bookAuthor);
         library.addToStock(book);
         String articleTitle = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(articleTitle);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(articleTitle, articleAuthor);
         library.addToStock(article);
         String newspaperTitle = "The Daily Java";
         LibraryItem newspaper = new Newspaper(newspaperTitle);
@@ -91,10 +99,12 @@ public class LibraryTest {
     public void testCheckingInBookWorks() {
         Library library = new Library();
         String bookTitle = "Java: Just in Time";
-        LibraryItem book = new Book(bookTitle);
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
+        LibraryItem book = new Book(bookTitle, bookAuthor);
         library.addToStock(book);
         String articleTitle = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(articleTitle);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(articleTitle, articleAuthor);
         library.addToStock(article);
         String newspaperTitle = "The Daily Java";
         LibraryItem newspaper = new Newspaper(newspaperTitle);
@@ -108,10 +118,12 @@ public class LibraryTest {
     public void testCheckingInArticleWorks() {
         Library library = new Library();
         String bookTitle = "Java: Just in Time";
-        LibraryItem book = new Book(bookTitle);
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
+        LibraryItem book = new Book(bookTitle, bookAuthor);
         library.addToStock(book);
         String articleTitle = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(articleTitle);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(articleTitle, articleAuthor);
         library.addToStock(article);
         String newspaperTitle = "The Daily Java";
         LibraryItem newspaper = new Newspaper(newspaperTitle);
@@ -125,10 +137,12 @@ public class LibraryTest {
     public void testCheckingInNewspaperDoesNotWork() {
         Library library = new Library();
         String bookTitle = "Java: Just in Time";
-        LibraryItem book = new Book(bookTitle);
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
+        LibraryItem book = new Book(bookTitle, bookAuthor);
         library.addToStock(book);
         String articleTitle = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(articleTitle);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(articleTitle, articleAuthor);
         library.addToStock(article);
         String newspaperTitle = "The Daily Java";
         LibraryItem newspaper = new Newspaper(newspaperTitle);
@@ -143,10 +157,12 @@ public class LibraryTest {
     public void testCantCheckInMissingBook() {
         Library library = new Library();
         String bookTitle = "Java: Just in Time";
-        LibraryItem book = new Book(bookTitle);
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
+        LibraryItem book = new Book(bookTitle, bookAuthor);
         library.addToStock(book);
         String articleTitle = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(articleTitle);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(articleTitle, articleAuthor);
         library.addToStock(article);
         String newspaperTitle = "The Daily Java";
         LibraryItem newspaper = new Newspaper(newspaperTitle);
@@ -159,10 +175,12 @@ public class LibraryTest {
     public void testCantCheckInMissingArticle() {
         Library library = new Library();
         String bookTitle = "Java: Just in Time";
-        LibraryItem book = new Book(bookTitle);
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
+        LibraryItem book = new Book(bookTitle, bookAuthor);
         library.addToStock(book);
         String articleTitle = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(articleTitle);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(articleTitle, articleAuthor);
         library.addToStock(article);
         String newspaperTitle = "The Daily Java";
         LibraryItem newspaper = new Newspaper(newspaperTitle);
@@ -175,10 +193,12 @@ public class LibraryTest {
     public void testCantCheckInMissingNewspaper() {
         Library library = new Library();
         String bookTitle = "Java: Just in Time";
-        LibraryItem book = new Book(bookTitle);
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
+        LibraryItem book = new Book(bookTitle, bookAuthor);
         library.addToStock(book);
         String articleTitle = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(articleTitle);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(articleTitle, articleAuthor);
         library.addToStock(article);
         String newspaperTitle = "The Daily Java";
         LibraryItem newspaper = new Newspaper(newspaperTitle);
@@ -190,10 +210,12 @@ public class LibraryTest {
     public void testCantCheckOutMissingBook() {
         Library library = new Library();
         String bookTitle = "Java: Just in Time";
-        LibraryItem book = new Book(bookTitle);
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
+        LibraryItem book = new Book(bookTitle, bookAuthor);
         library.addToStock(book);
         String articleTitle = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(articleTitle);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(articleTitle, articleAuthor);
         library.addToStock(article);
         String newspaperTitle = "The Daily Java";
         LibraryItem newspaper = new Newspaper(newspaperTitle);
@@ -205,10 +227,12 @@ public class LibraryTest {
     public void testCantCheckOutMissingArticle() {
         Library library = new Library();
         String bookTitle = "Java: Just in Time";
-        LibraryItem book = new Book(bookTitle);
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
+        LibraryItem book = new Book(bookTitle, bookAuthor);
         library.addToStock(book);
         String articleTitle = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(articleTitle);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(articleTitle, articleAuthor);
         library.addToStock(article);
         String newspaperTitle = "The Daily Java";
         LibraryItem newspaper = new Newspaper(newspaperTitle);
@@ -220,10 +244,12 @@ public class LibraryTest {
     public void testCantCheckOutMissingNewspaper() {
         Library library = new Library();
         String bookTitle = "Java: Just in Time";
-        LibraryItem book = new Book(bookTitle);
+        Author bookAuthor = new Author("James Gosling", "james@gosling.com", "gosling.com", "0112233445");
+        LibraryItem book = new Book(bookTitle, bookAuthor);
         library.addToStock(book);
         String articleTitle = "Java - New Adventures in Coding";
-        LibraryItem article = new Article(articleTitle);
+        Author articleAuthor = new Author("John Latham", "john@latham.com", "latham.com", "0161 343 4343");
+        LibraryItem article = new Article(articleTitle, articleAuthor);
         library.addToStock(article);
         String newspaperTitle = "The Daily Java";
         LibraryItem newspaper = new Newspaper(newspaperTitle);
