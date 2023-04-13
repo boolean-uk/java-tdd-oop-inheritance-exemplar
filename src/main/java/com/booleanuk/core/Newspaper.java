@@ -15,4 +15,14 @@ public class Newspaper extends LibraryItem {
     public String checkOut() {
         return "newspapers are not available for loan";
     }
+
+    @Override
+    public Author getAuthor() {
+        return null;
+    }
+
+    @Override
+    public void setAuthor(Author author) {
+        System.out.println("This is not permitted, newspapers do not have a single author.");
+    }
 }
