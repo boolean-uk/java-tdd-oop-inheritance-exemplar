@@ -1,6 +1,6 @@
 package com.booleanuk.core;
 
-public class LibraryItem {
+public abstract class LibraryItem {
     String title;
     Author author = null;
 
